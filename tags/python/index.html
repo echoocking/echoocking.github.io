@@ -87,7 +87,7 @@
 <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="echoocking’s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/python/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -113,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/python/"/>
 
-  <title> echoocking’s blog </title>
+  <title> 标签: python | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,217 +213,45 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        python
+        <small>标签</small>
+      </h2>
+    </div>
+
     
       
 
-  
-  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
               
-                
-                <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
-                  requests库
-                </a>
+                <span itemprop="name">requests库</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-06-09T16:19:10+08:00"
+              content="2016-06-09" >
+          06-09
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>requests库和url和urllib库有类似的作用 都是提供处理http协议的功能。</p>
-<p>但是requests库使用更加方便 ，能够更加简单的书写代码。</p>
-<p>例如 r=requests.get(url)    ====   urllib2.urlopen(url).read()功能</p>
-<p>##接下来 我们实践一下 YOYO</p>
-<pre><code>&gt; r=requests.get(&apos;http://www.qiushibaike.com&apos;)
-&gt;print r.url
-http://www.qiushibaike.com/
-&gt;print r
-&lt;Response [200]&gt;
-&gt;r.text
-u&apos;\n&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;
-</code></pre><p>##json<br>像urllib和urllib2，如果用到json，就要引入新模块，如json和simplejson，但在requests中已经有了内置的函数，r.json()。就拿查询IP的API来说：</p>
-<p>r = requests.get(‘<a href="http://ip.taobao.com/service/getIpInfo.php?ip=122.88.60.28" target="_blank" rel="external">http://ip.taobao.com/service/getIpInfo.php?ip=122.88.60.28</a>‘)<br>r.json()[‘data’][‘country’]<br>‘中国’ </p>
-<p>##网页状态码<br>我们可以用r.status_code来检查网页的状态码。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>r = requests.get(‘<a href="http://www.mengtiankong.com" target="_blank" rel="external">http://www.mengtiankong.com</a>‘)<br>r.status_code<br>200<br>r = requests.get(‘<a href="http://www.mengtiankong.com/123123/" target="_blank" rel="external">http://www.mengtiankong.com/123123/</a>‘)<br>r.status_code<br>404</p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/07/hello-Word/" itemprop="url">
-                  hello Word
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T14:53:57+08:00" content="2016-06-07">
-              2016-06-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><em>人要是没有梦想，那跟咸鱼有什么区别？</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
+  </div>
 
   
 
