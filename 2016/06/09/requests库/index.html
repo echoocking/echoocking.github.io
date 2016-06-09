@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="#requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
-例如 r=requests.get(url)    ====   urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://ww">
+<meta name="description" content="requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
+例如 r=requests.get(url)urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://www.qiushibaik">
 <meta property="og:type" content="article">
 <meta property="og:title" content="requests库">
 <meta property="og:url" content="http://yoursite.com/2016/06/09/requests库/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description" content="#requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
-例如 r=requests.get(url)    ====   urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://ww">
-<meta property="og:updated_time" content="2016-06-09T08:27:41.000Z">
+<meta property="og:description" content="requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
+例如 r=requests.get(url)urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://www.qiushibaik">
+<meta property="og:updated_time" content="2016-06-09T09:34:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="requests库">
-<meta name="twitter:description" content="#requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
-例如 r=requests.get(url)    ====   urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://ww">
+<meta name="twitter:description" content="requests库requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。但是requests库使用更加方便 ，能够更加简单的书写代码。
+例如 r=requests.get(url)urllib2.urlopen(url).read()功能接下来 我们实践一下 YOYO1234567&amp;gt; r=requests.get(&apos;http://www.qiushibaik">
 
 
 
@@ -279,11 +279,11 @@
       
 
       
-        <p>#requests库<br>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。</p>
-<p>例如 r=requests.get(url)    ====   urllib2.urlopen(url).read()功能<br>接下来 我们实践一下 YOYO<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; r=requests.get(<span class="string">'http://www.qiushibaike.com'</span>)</span><br><span class="line">&gt;<span class="keyword">print</span> r.url</span><br><span class="line">http://www.qiushibaike.com/</span><br><span class="line">&gt;<span class="keyword">print</span> r</span><br><span class="line">&lt;Response [<span class="number">200</span>]&gt;</span><br><span class="line">&gt;r.text</span><br><span class="line"><span class="string">u'\n&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span></span><br></pre></td></tr></table></figure></p>
-<p>#json<br>像urllib和urllib2，如果用到json，就要引入新模块，如json和simplejson，但在requests中已经有了内置的函数，r.json()。就拿查询IP的API来说：</p>
-<p>r = requests.get(‘<a href="http://ip.taobao.com/service/getIpInfo.php?ip=122.88.60.28" target="_blank" rel="external">http://ip.taobao.com/service/getIpInfo.php?ip=122.88.60.28</a>‘)<br>r.json()[‘data’][‘country’]<br>‘中国’ </p>
-<p>#网页状态码<br>我们可以用r.status_code来检查网页的状态码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;r = requests.get(<span class="string">'http://www.mengtiankong.com'</span>)</span><br><span class="line">&gt;&gt;&gt;r.status_code</span><br><span class="line"><span class="number">200</span></span><br><span class="line">&gt;&gt;&gt;r = requests.get(<span class="string">'http://www.mengtiankong.com/123123/'</span>)</span><br><span class="line">&gt;&gt;&gt;r.status_code</span><br><span class="line"><span class="number">404</span></span><br></pre></td></tr></table></figure></p>
+        <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><p>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。</p>
+<p>例如 r=requests.get(url)<br>urllib2.urlopen(url).read()功能<br>接下来 我们实践一下 YOYO<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; r=requests.get(<span class="string">'http://www.qiushibaike.com'</span>)</span><br><span class="line">&gt;<span class="keyword">print</span> r.url</span><br><span class="line">http://www.qiushibaike.com/</span><br><span class="line">&gt;<span class="keyword">print</span> r</span><br><span class="line">&lt;Response [<span class="number">200</span>]&gt;</span><br><span class="line">&gt;r.text</span><br><span class="line"><span class="string">u'\n&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>像urllib和urllib2，如果用到json，就要引入新模块，如json和simplejson，但在requests中已经有了内置的函数，r.json()。就拿查询IP的API来说：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r=requests.get(<span class="string">'http://ip.taobao.com/service/getIpInfo.php?ip=122.88.60.28'</span>)</span><br><span class="line">r.json()[<span class="string">'data'</span>][<span class="string">'country'</span>]</span><br><span class="line"><span class="string">'中国'</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="网页状态码"><a href="#网页状态码" class="headerlink" title="网页状态码"></a>网页状态码</h1><p>我们可以用r.status_code来检查网页的状态码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;r = requests.get(<span class="string">'http://www.mengtiankong.com'</span>)</span><br><span class="line">&gt;&gt;&gt;r.status_code</span><br><span class="line"><span class="number">200</span></span><br><span class="line">&gt;&gt;&gt;r = requests.get(<span class="string">'http://www.mengtiankong.com/123123/'</span>)</span><br><span class="line">&gt;&gt;&gt;r.status_code</span><br><span class="line"><span class="number">404</span></span><br></pre></td></tr></table></figure></p>
+<p>  [<a href="http://docs.python.org/library/htmlparser.html#HTMLParser.HTMLParser" target="_blank" rel="external">http://docs.python.org/library/htmlparser.html#HTMLParser.HTMLParser</a>]<br>[<a href="http://www.crummy.com/software/BeautifulSoup/bs3/documentation.zh.html" target="_blank" rel="external">http://www.crummy.com/software/BeautifulSoup/bs3/documentation.zh.html</a>]<br>[<a href="http://cn.python-requests.org/en/latest/" target="_blank" rel="external">http://cn.python-requests.org/en/latest/</a>]<br>[<a href="http://cn.python-requests.org/en/latest/" target="_blank" rel="external">http://cn.python-requests.org/en/latest/</a>]</p>
 
       
     </div>
@@ -447,7 +447,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#requests库"><span class="nav-number">1.</span> <span class="nav-text">requests库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#json"><span class="nav-number">2.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网页状态码"><span class="nav-number">3.</span> <span class="nav-text">网页状态码</span></a></li></ol></div>
             
           </div>
         </section>
