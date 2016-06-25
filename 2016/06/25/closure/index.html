@@ -84,16 +84,52 @@
 
 
 
-<meta name="description" content="title: Tagclouddate: 2014-12-22 12:39:04type: “tags”comments: false # 关闭这个页面的多说或者 Disqus 评论">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index-1.html">
+<meta name="description" content="闭包标签（空格分隔）： python
+
+恩 听起来很厉害的样子喔概念：内部函数对外部变量的引用
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+其实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="echoocking’s blog">
+<meta property="og:url" content="http://yoursite.com/2016/06/25/closure/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description" content="title: Tagclouddate: 2014-12-22 12:39:04type: “tags”comments: false # 关闭这个页面的多说或者 Disqus 评论">
-<meta property="og:updated_time" content="2016-06-09T10:07:22.000Z">
+<meta property="og:description" content="闭包标签（空格分隔）： python
+
+恩 听起来很厉害的样子喔概念：内部函数对外部变量的引用
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+其实">
+<meta property="og:updated_time" content="2016-06-25T00:40:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="title: Tagclouddate: 2014-12-22 12:39:04type: “tags”comments: false # 关闭这个页面的多说或者 Disqus 评论">
+<meta name="twitter:title" content="echoocking’s blog">
+<meta name="twitter:description" content="闭包标签（空格分隔）： python
+
+恩 听起来很厉害的样子喔概念：内部函数对外部变量的引用
+def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+其实">
 
 
 
@@ -114,15 +150,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/index-1.html"/>
+  <link rel="canonical" href="http://yoursite.com/2016/06/25/closure/"/>
 
-  <title>
-  
-
-  
-    tags | echoocking’s blog
-  
-</title>
+  <title>  | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +173,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -223,10 +253,130 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p>title: Tagcloud<br>date: 2014-12-22 12:39:04<br>type: “tags”<br>comments: false # 关闭这个页面的多说或者 Disqus 评论</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T08:40:25+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>标签（空格分隔）： python</p>
+<hr>
+<p>恩 听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用</p>
+<pre><code>def count():
+    fs = []
+    for i in range(1, 4):
+        def f():
+             return i*i
+        fs.append(f)
+    return fs
+
+f1, f2, f3 = count()
+</code></pre><p>其实 感觉也不是很困难的样子哎 ╮(╯_╰)╭<br>闭包像个空心球 ， 你知道内部和外部是什么，但不知道中间是什么<br>闭包三个要素：</p>
+<ul>
+<li>必须有内部函数</li>
+<li>内嵌函数需要引用外部函数的变量</li>
+<li>外部函数必须返回内嵌函数</li>
+</ul>
+<p>函数运行后不会被撤销。WHY<br>因为闭包的作用就是 在程序返回后没有被释放资源的栈区。<br>在多人开发时，可以避免重复定义相关变量。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/09/requests库/" rel="next" title="requests库">
+                <i class="fa fa-chevron-left"></i> requests库
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -258,8 +408,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -322,6 +481,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -416,6 +586,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
