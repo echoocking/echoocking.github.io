@@ -282,15 +282,15 @@
       
         
           
-            <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>解决方法是：使用文件权限更改命令。<br> <code>423  cd .deploy_git
-    424  ls
-    425  ls -la
-    426  cd .git
-    427  ls -la
-    428  cd objects
-    429  ls -la
-    430  cd ..
-    431  ls
+            <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>解决方法是：使用文件权限更改命令。<br> <code>423  cd .deploy_git &lt;br&gt;
+    424  ls &lt;br&gt;
+    425  ls -la &lt;br&gt;
+    426  cd .git &lt;br&gt;
+    427  ls -la &lt;br&gt;
+    428  cd objects &lt;br&gt;
+    429  ls -la &lt;br&gt;
+    430  cd .. &lt;br&gt; 
+    431  ls  &lt;br&gt;
     432  sudo chown -R echoocking:staff *</code><br>  这里是根据提示而找出.git文件是root权限<br>  而后，使用 chown -R命令递归更改.deploy_git的全部文件的使用权限。</p>
 <hr>
 <h1 id="持续更新ING"><a href="#持续更新ING" class="headerlink" title="持续更新ING"></a>持续更新ING</h1>
