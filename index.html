@@ -238,6 +238,102 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
+                  hexo 问题解决方案
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
+              2016-06-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="hexo-问题解决方案"><a href="#hexo-问题解决方案" class="headerlink" title="hexo 问题解决方案"></a>hexo 问题解决方案</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>解决方法是：使用文件权限更改命令。<br>  423  cd .deploy_git<br>  424  ls<br>  425  ls -la<br>  426  cd .git<br>  427  ls -la<br>  428  cd objects<br>  429  ls -la<br>  430  cd ..<br>  431  ls<br>  432  sudo chown -R echoocking:staff *<br>  这里是根据提示而找出.git文件是root权限<br>  而后，使用 chown -R命令递归更改.deploy_git的全部文件的使用权限。</p>
+<hr>
+<p>持续更新ING</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
                   闭包的含义
                 </a>
@@ -282,7 +378,7 @@
       
         
           
-            <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>听起来很厉害的样子喔 O(∩_∩)O<br>概念：内部函数对外部变量的引用</p>
+            <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用</p>
 <pre><code>def count():
     fs = []
     for i in range(1, 4):
@@ -560,7 +656,7 @@ f1, f2, f3 = count()
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -570,7 +666,7 @@ f1, f2, f3 = count()
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
