@@ -94,7 +94,7 @@
 <meta property="og:description" content="前提手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器写下过程。这里使用ckeditor编辑器
 准备下载安装django-ckeditor。使用1pip install django-ckeditor
 其中遇到了pip的更新问题。使用提供的 sudo -i pip install –upgrade pip 遇到错误。经过搜索 ,下列语句可以完美解决。1">
-<meta property="og:updated_time" content="2016-06-28T13:17:23.000Z">
+<meta property="og:updated_time" content="2016-06-28T13:20:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="django博客搭建之富文本编辑器">
 <meta name="twitter:description" content="前提手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器写下过程。这里使用ckeditor编辑器
@@ -291,7 +291,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url(<span class="string">r'^ckeditor/'</span>, include(<span class="string">'ckeditor_uploader.urls'</span>)),</span><br></pre></td></tr></table></figure>
 <p>添加在项目的URL文件中。<br>做完这些就可以在后台对应处看见编辑器啦~~</p>
 <h1 id="更多的优化"><a href="#更多的优化" class="headerlink" title="更多的优化"></a>更多的优化</h1><p>仅仅富文本编辑器，会发现解析还是有问题，而且不好添加图片</p>
-<h2 id="默认转义问题解决"><a href="#默认转义问题解决" class="headerlink" title="默认转义问题解决"></a>默认转义问题解决</h2><p>解析的问题是因为因为django的模板系统默认会对输出进行转义，比如把</p><p>转义成了</p><p> ，然后再显示出来的时候就如实地显示为</p><p>。<br><br>这其实是django设计者的一片好心，不过这里却是画蛇添足了。要解决这个问题只要把默认的转义去掉就好了。<br>这里有几种方法:<br>1.例如<br><br>现在我们把它变成这样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% autoescape off %&#125;</span><br><span class="line">          &#123;&#123;post.content&#125;&#125;</span><br><span class="line">&#123;% endautoescape %&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="默认转义问题解决"><a href="#默认转义问题解决" class="headerlink" title="默认转义问题解决"></a>默认转义问题解决</h2><p>解析的问题是因为因为django的模板系统默认会对输出进行转义，比如把p标签转义成&lt;\p&gt; ，然后再显示出来的时候就如实地显示为&lt;\p&gt;。<br><br>这其实是django设计者的一片好心，不过这里却是画蛇添足了。要解决这个问题只要把默认的转义去掉就好了。<br>这里有几种方法:<br>1.例如<br><br>现在我们把它变成这样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% autoescape off %&#125;</span><br><span class="line">          &#123;&#123;post.content&#125;&#125;</span><br><span class="line">&#123;% endautoescape %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>或者直接<code></code>效果相同。<br><br>2.配置ckeditor插件目录下的<code>ckeditor.config.js</code>文件加入<br>config.entities = false;缺点是所有的内容都不转义了<br>第一种更方便哦~</p>
 
       
