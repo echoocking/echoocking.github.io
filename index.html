@@ -238,6 +238,107 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/28/editor/" itemprop="url">
+                  django博客搭建之富文本编辑器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T16:25:17+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#前提<br><br>    手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器<br>写下过程。这里使用ckeditor编辑器</p>
+<p>#准备<br><br>下载安装django-ckeditor。使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-ckeditor</span><br></pre></td></tr></table></figure></p>
+<p>其中遇到了pip的更新问题。使用提供的 sudo -i pip install –upgrade pip 遇到错误。<br><br>经过搜索 ,下列语句可以完美解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure></p>
+<p>然后进入下载目录。运行以下命令。就安装在对应的django子目录下了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i python setup.py install</span><br></pre></td></tr></table></figure></p>
+<p>在setting中添加app以及确定对应的目录路径<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MEDIA_URL = <span class="string">'../blog/template/'</span> <span class="comment">#这里是存放CKEditor(js,CSS等文件)</span></span><br><span class="line">MEDIA_ROOT = os.path.join(BASE_DIR, <span class="string">'media'</span>)</span><br><span class="line">CKEDITOR_UPLOAD_PATH = <span class="string">'../blog/template/img/'</span> <span class="comment">#图片文件存放的目录</span></span><br></pre></td></tr></table></figure></p>
+<p>model 文件中添加<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ckeditor.fields <span class="keyword">import</span> RichTextField</span><br><span class="line">content = RichTextField(<span class="string">'正文'</span>) <span class="comment">#需要编辑处</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">url(r'^ckeditor/', include('ckeditor_uploader.urls')),</span><br><span class="line">```添加在项目的URL文件中。</span><br><span class="line">做完这些就可以在后台对应处看见编辑器啦~~</span><br><span class="line">#更多的优化</span><br><span class="line">仅仅富文本编辑器，会发现解析还是有问题，而且不好添加图片</span><br><span class="line">##默认转义问题解决</span><br><span class="line">解析的问题是因为因为django的模板系统默认会对输出进行转义，比如把&lt;p&gt;转义成了&lt;p&gt; ，然后再显示出来的时候就如实地显示为&lt;p&gt;。</span><br><span class="line">&lt;br&gt;这其实是django设计者的一片好心，不过这里却是画蛇添足了。要解决这个问题只要把默认的转义去掉就好了。</span><br><span class="line">这里有几种方法:</span><br><span class="line">1.例如&#123;&#123;post.content&#125;&#125;&lt;/br&gt;</span><br><span class="line">现在我们把它变成这样：</span><br><span class="line">```html</span><br><span class="line">&#123;% autoescape off %&#125;</span><br><span class="line">          &#123;&#123;post.content&#125;&#125;</span><br><span class="line">&#123;% endautoescape %&#125;</span><br></pre></td></tr></table></figure>
+<p>或者直接<code></code>效果相同。<br><br>2.配置ckeditor插件目录下的<code>ckeditor.config.js</code>文件加入<br>config.entities = false;缺点是所有的内容都不转义了<br>第一种更方便哦~</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
                   hexo 问题解决方案
                 </a>
@@ -378,7 +479,7 @@
       
         
           
-            <p>#一眼 闭包</p>
+            <p>#基本概念 闭包</p>
 <p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用</p>
 <pre><code>def count():
     fs = []
@@ -396,7 +497,7 @@ f1, f2, f3 = count()
 <li>外部函数必须返回内嵌函数</li>
 </ul>
 <p>函数运行后不会被撤销。WHY<br>因为闭包的作用就是 在程序返回后没有被释放资源的栈区。<br>在多人开发时，可以避免重复定义相关变量。</p>
-<p>#两眼 闭包</p>
+<p>#很有意思的–&gt;以后完成 </p>
 
           
         
@@ -658,7 +759,7 @@ f1, f2, f3 = count()
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -668,7 +769,7 @@ f1, f2, f3 = count()
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
