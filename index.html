@@ -284,7 +284,9 @@
           
             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
 <pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
+
 &lt;!--more--&gt;
+
 在初始化函数中 直接调用了传递的函数func，说明在函数#初始化#的时候func就可以被调用的。即说明在装饰的阶段__init__就被调用。
 而后函数调用的时候wrapper()才被调用。
 对于装饰器相对于hello来说的作用相当于 log(hello)。即最后运行后返回wrapper()
@@ -440,8 +442,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
-                  hexo 问题解决方案
+                <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
+                  闭包的含义
                 </a>
               
             
@@ -483,9 +485,10 @@
 
       
         
-          <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>
+          <p>#基本概念 闭包</p>
+<p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/Q-hexo/#more" rel="contents">
+            <a class="btn" href="/2016/06/09/closure/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -536,8 +539,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
-                  闭包的含义
+                <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
+                  hexo 问题解决方案
                 </a>
               
             
@@ -579,10 +582,9 @@
 
       
         
-          <p>#基本概念 闭包</p>
-<p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用<br>
+          <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/closure/#more" rel="contents">
+            <a class="btn" href="/2016/06/09/Q-hexo/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
