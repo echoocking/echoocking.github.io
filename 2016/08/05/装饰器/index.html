@@ -84,15 +84,19 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
+<meta name="description" content="title :装饰器
+author :echoocking1234567891011121314def log(func):    def __init__(self, func):        f = self.func	def wrapper(*args, **kwargs):		print (&apos;call\&apos;s by :%s&apos; %func)		return func(*args, **kw">
+<meta property="og:type" content="article">
 <meta property="og:title" content="echoocking’s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/05/装饰器/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description">
+<meta property="og:description" content="title :装饰器
+author :echoocking1234567891011121314def log(func):    def __init__(self, func):        f = self.func	def wrapper(*args, **kwargs):		print (&apos;call\&apos;s by :%s&apos; %func)		return func(*args, **kw">
+<meta property="og:updated_time" content="2016-08-06T13:06:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="echoocking’s blog">
-<meta name="twitter:description">
+<meta name="twitter:description" content="title :装饰器
+author :echoocking1234567891011121314def log(func):    def __init__(self, func):        f = self.func	def wrapper(*args, **kwargs):		print (&apos;call\&apos;s by :%s&apos; %func)		return func(*args, **kw">
 
 
 
@@ -113,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/05/装饰器/"/>
 
-  <title> echoocking’s blog </title>
+  <title>  | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,9 +240,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/05/装饰器/" itemprop="url">
-                  未命名
-                </a>
               
             
           </h1>
@@ -280,9 +279,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <p>title :装饰器</p>
 <h2 id="author-echoocking"><a href="#author-echoocking" class="headerlink" title="author :echoocking"></a>author :echoocking</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
 <pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
@@ -297,16 +294,19 @@
 </blockquote>
 <p>对于<strong>call</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">decoratorWithoutArguments</span><span class="params">(object)</span>:</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, f)</span>:</span>  </span><br><span class="line">        <span class="string">""" </span><br><span class="line">        If there are no decorator arguments, the function </span><br><span class="line">        to be decorated is passed to the constructor. </span><br><span class="line">        """</span>  </span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Inside __init__()"</span>  </span><br><span class="line">        self.f = f  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args)</span>:</span>  </span><br><span class="line">        <span class="string">""" </span><br><span class="line">        The __call__ method is not called until the </span><br><span class="line">        decorated function is called. </span><br><span class="line">        """</span>  </span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Inside __call__()"</span>  </span><br><span class="line">        self.f(*args)  </span><br><span class="line">        <span class="keyword">print</span> <span class="string">"After self.f(*args)"</span>  </span><br><span class="line"> </span><br><span class="line"><span class="meta">@decoratorWithoutArguments  </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sayHello</span><span class="params">(a1, a2, a3, a4)</span>:</span>  </span><br><span class="line">    <span class="keyword">print</span> <span class="string">'sayHello arguments:'</span>, a1, a2, a3, a4  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">print</span> <span class="string">"After decoration"</span>  </span><br><span class="line"><span class="comment">#这种装饰器会在__init__会被调用一次，装饰的函数每次调用时候都会调用__call__  </span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"Preparing to call sayHello()"</span>  </span><br><span class="line">sayHello(<span class="string">"say"</span>, <span class="string">"hello"</span>, <span class="string">"argument"</span>, <span class="string">"list"</span>)  </span><br><span class="line"><span class="keyword">print</span> <span class="string">"After first sayHello() call"</span>  </span><br><span class="line">sayHello(<span class="string">"a"</span>, <span class="string">"different"</span>, <span class="string">"set of"</span>, <span class="string">"arguments"</span>)  </span><br><span class="line"><span class="keyword">print</span> <span class="string">"After second sayHello() call"</span></span><br></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -314,498 +314,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/28/editor/" rel="next" title="django博客搭建之富文本编辑器">
+                <i class="fa fa-chevron-left"></i> django博客搭建之富文本编辑器
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/06/28/editor/" itemprop="url">
-                  django博客搭建之富文本编辑器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T16:25:17+08:00" content="2016-06-28">
-              2016-06-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器<br>写下过程。这里使用ckeditor编辑器<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/28/editor/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
-                  hexo 问题解决方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/Q-hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
-                  闭包的含义
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>#基本概念 闭包</p>
-<p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/closure/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
-                  requests库
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><p>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/requests库/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/07/hello-Word/" itemprop="url">
-                  hello Word
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T14:53:57+08:00" content="2016-06-07">
-              2016-06-07
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><em>人要是没有梦想，那跟咸鱼有什么区别？</em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -813,6 +347,18 @@
 
 
           
+  <div class="comments" id="comments">
+      <!--高速版-->
+          <div id="SOHUCS"></div>
+              <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+                  <script type="text/javascript">
+                          window.changyan.api.config({
+                                          appid: 'cyssoTPza',
+                                                      conf:'prod_7db1c6ab937241b4a2858a55f9bf2b33'
+                                                              });
+                              </script>        
+                                </div>
+                                
 
         </div>
         
@@ -832,8 +378,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -896,6 +451,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#author-echoocking"><span class="nav-number">1.</span> <span class="nav-text">author :echoocking</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -995,6 +561,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
