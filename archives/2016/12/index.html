@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="重新想 我不想blog全是咸鱼谢谢" />
 
 
 
@@ -84,16 +84,15 @@
 
 
 
-<meta name="description" content="权限问题解决hexo d 提交过程中 define permission错误。是由于hexo使用过程中使用了root权限的原因。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo 问题解决方案">
-<meta property="og:url" content="http://yoursite.com/2016/06/09/Q-hexo/index.html">
+<meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="echoocking’s blog">
+<meta property="og:url" content="http://yoursite.com/archives/2016/12/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description" content="权限问题解决hexo d 提交过程中 define permission错误。是由于hexo使用过程中使用了root权限的原因。">
-<meta property="og:updated_time" content="2016-07-03T07:26:21.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 问题解决方案">
-<meta name="twitter:description" content="权限问题解决hexo d 提交过程中 define permission错误。是由于hexo使用过程中使用了root权限的原因。">
+<meta name="twitter:title" content="echoocking’s blog">
+<meta name="twitter:description">
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/09/Q-hexo/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2016/12/"/>
 
-  <title> hexo 问题解决方案 | echoocking’s blog </title>
+  <title> 归档 | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,127 +214,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      嗯..! 目前共计 7 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
+      
+      
+      
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      
         
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        </div>
+      
+      
+
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/12/21/crawl笔记0/" itemprop="url">
               
-                hexo 问题解决方案
+                <span itemprop="name">一招教会你 模拟登录知乎</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-12-21T15:24:00+08:00"
+              content="2016-12-21" >
+          12-21
+        </time>
+      </div>
 
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br><a id="more"></a><br>解决方法是：使用文件权限更改命令。<br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">423</span>  cd .deploy_git </span><br><span class="line"><span class="number">424</span>  ls</span><br><span class="line"><span class="number">425</span>  ls -la</span><br><span class="line"><span class="number">426</span>  cd .git</span><br><span class="line"><span class="number">427</span>  ls -la</span><br><span class="line"><span class="number">428</span>  cd objects</span><br><span class="line"><span class="number">429</span>  ls -la</span><br><span class="line"><span class="number">430</span>  cd ..</span><br><span class="line"><span class="number">431</span>  ls</span><br><span class="line"><span class="number">432</span>  sudo chown -R echoocking:staff *</span><br></pre></td></tr></table></figure></p>
-<p>  这里是根据提示而找出.git文件是root权限<br>  而后，使用 chown -R命令递归更改.deploy_git的全部文件的使用权限。</p>
-<hr>
-<h1 id="持续更新ING"><a href="#持续更新ING" class="headerlink" title="持续更新ING"></a>持续更新ING</h1>
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/09/requests库/" rel="next" title="requests库">
-                <i class="fa fa-chevron-left"></i> requests库
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/09/closure/" rel="prev" title="闭包的含义">
-                闭包的含义 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -343,18 +281,6 @@
 
 
           
-  <div class="comments" id="comments">
-      <!--高速版-->
-          <div id="SOHUCS"></div>
-              <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-                  <script type="text/javascript">
-                          window.changyan.api.config({
-                                          appid: 'cyssoTPza',
-                                                      conf:'prod_7db1c6ab937241b4a2858a55f9bf2b33'
-                                                              });
-                              </script>        
-                                </div>
-                                
 
         </div>
         
@@ -374,17 +300,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -447,17 +364,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#权限问题解决"><span class="nav-number">1.</span> <span class="nav-text">权限问题解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持续更新ING"><span class="nav-number">2.</span> <span class="nav-text">持续更新ING</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -557,9 +463,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
