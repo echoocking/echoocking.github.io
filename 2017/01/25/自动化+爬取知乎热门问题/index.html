@@ -113,7 +113,7 @@ tips：接上篇模拟登录">
 
 tips：接上篇模拟登录">
 <meta property="og:image" content="http://yoursite.com/Users/echoocking/Desktop/1.pic_hd.jpg">
-<meta property="og:updated_time" content="2017-01-26T00:36:22.000Z">
+<meta property="og:updated_time" content="2017-01-26T00:38:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自动化+爬取知乎热门问题">
 <meta name="twitter:description" content="引言TryToZH项目的目的是爬取知乎热门问题的高票答案的一个项目。完成模拟登录的之后，开始获取内部的内容。由于知乎话题广场之中是通过各个分类进行索引，所以本项目使用其中一个大分类作为爬虫的入口，通过爬虫进入分类下的问题集合页，爬取热门问题的链接。ZH是以Js的方式动态生成数据且以滚动页面的方式进行分页。所以这里实现通过scrapy+selenium自动化爬取内容链接。
@@ -328,13 +328,16 @@ tips：接上篇模拟登录">
 </blockquote>
 <h1 id="scrapy-爬虫框架"><a href="#scrapy-爬虫框架" class="headerlink" title="scrapy 爬虫框架"></a>scrapy 爬虫框架</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
 <p>“ Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。可以应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。其最初是为了 页面抓取 (更确切来说, 网络抓取 )所设计的， 也可以应用在获取API所返回的数据(例如 AmazonAssociates Web Services ) 或者通用的网络爬虫。”</p>
+</blockquote>
 <h2 id="选择scrapy的理由"><a href="#选择scrapy的理由" class="headerlink" title="选择scrapy的理由"></a>选择scrapy的理由</h2><ul>
 <li>它不仅仅提供了一些开箱即用的基本组件，还提供了强大的自定义功能。框架的学习规律就是修改配置文件，填充代码就可以了。</li>
 <li>*Scrapy只需一个配置文件就能组合各种组件和配置选项，并且可以级联多个操作如清理、组织、存储到数据库等。              </li>
 <li>关于他的强悍，举个简单例子来说：假设你抓取的目标网站的每一页有500个条目，Scrapy可以毫不费劲地对目标网站同时发起 20个请求，假设带宽足够，每个请求需要1秒完成，就相当于每秒钟爬取到20个页面，即每秒钟产生 10000个 条目数据 。再假设要把这些条目同时存储到云上，且每一个条目的存储需要3秒钟，那么处理20个请求就需要运行10000*3=30000个并发的写入请求，对于传统的多线程来说，就需要换成30000个线程，这显然地造成系统无法承载。而对于Scrapy，只要硬件够， 30000个并发也不是问题。<br>以上只是对Scrapy的一个简单的普及，事实上现在Scrapy已是一个主流的Python开源爬虫框架，它设计好了爬虫应用的基本骨架，使得用户不再需要配备大量的人力去重复造轮子，同时它也为了实现不同的应用目的留下了灵活的设计余地。使用一些其它的模块，或者配合一些中间件，可以将Scrapy扩展成为复杂的高级爬虫程序。<a id="more"></a>
-<h1 id="自动化模拟用户操作"><a href="#自动化模拟用户操作" class="headerlink" title="自动化模拟用户操作"></a>自动化模拟用户操作</h1><h2 id="selenium与Selenium-WebDriver"><a href="#selenium与Selenium-WebDriver" class="headerlink" title="selenium与Selenium WebDriver"></a>selenium与Selenium WebDriver</h2>原文来自《开源软件架构》（The Architecture of Open Source Applications）书中的 “Selenium WebDriver”章节。<br>Selenium是一个浏览器自动化工具，通常用于编写端到端的web应用测试脚本。正如字面意思，浏览器自动化工具能够自动化对浏览器的控制，因此可用于自动化重复的测试任务。这看上去好像是个能够轻易解决的问题，但是在后面我们将会发现，实现这个功能的背后，做了很多工作。<br>在描述Selenium的架构之前，先理解各种相关的项目是如何组合在一起的是有很有帮助的。从较高的层面上来看，Selenium是一套整合了三个工具的工具集。其一，Selenium IDE，是Firefox的一个扩展，支持用户记录和回放测试脚本。但是记录/回放模式较为局限，对很多用户来说并不适用。<em>所以需要第二个工具，Selenium WebDriver，它提供了多种语言的API，可用于进行更多的操纵和构建标准软件开发实践的应用</em>。其三，Selenium Grid，它支持Selenium API控制分布于不同机器上的浏览器实体，并能够并行的运行测试任务。在这个项目中，三个工具简称“IDE”、“WebDriver”、“Grid”。</li>
-</ul>
+<h1 id="自动化模拟用户操作"><a href="#自动化模拟用户操作" class="headerlink" title="自动化模拟用户操作"></a>自动化模拟用户操作</h1><h2 id="selenium与Selenium-WebDriver"><a href="#selenium与Selenium-WebDriver" class="headerlink" title="selenium与Selenium WebDriver"></a>selenium与Selenium WebDriver</h2><blockquote>
+<p>原文来自《开源软件架构》（The Architecture of Open Source Applications）书中的 “Selenium WebDriver”章节。<br>Selenium是一个浏览器自动化工具，通常用于编写端到端的web应用测试脚本。正如字面意思，浏览器自动化工具能够自动化对浏览器的控制，因此可用于自动化重复的测试任务。这看上去好像是个能够轻易解决的问题，但是在后面我们将会发现，实现这个功能的背后，做了很多工作。<br>在描述Selenium的架构之前，先理解各种相关的项目是如何组合在一起的是有很有帮助的。从较高的层面上来看，Selenium是一套整合了三个工具的工具集。其一，Selenium IDE，是Firefox的一个扩展，支持用户记录和回放测试脚本。但是记录/回放模式较为局限，对很多用户来说并不适用。<em>所以需要第二个工具，Selenium WebDriver，它提供了多种语言的API，可用于进行更多的操纵和构建标准软件开发实践的应用</em>。其三，Selenium Grid，它支持Selenium API控制分布于不同机器上的浏览器实体，并能够并行的运行测试任务。在这个项目中，三个工具简称“IDE”、“WebDriver”、“Grid”。</p>
 </blockquote>
+</li>
+</ul>
 <h1 id="selenuim-python-with-scrapy"><a href="#selenuim-python-with-scrapy" class="headerlink" title="selenuim -python with scrapy"></a>selenuim -python with scrapy</h1><blockquote>
 <p>tips：我是使用pycharm来编辑、调试代码。别忘啦debug爬虫代码需要格外设置Configuration哦~</p>
 </blockquote>
