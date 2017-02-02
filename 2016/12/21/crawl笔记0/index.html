@@ -103,18 +103,21 @@
 
 
 <meta name="description" content="爬虫爬取知乎 ROUND ONE – 知乎模拟登录
-主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~">
+主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~
+准备阶段1.chrome自带的工具分析network； –&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一招教会你 模拟登录知乎">
 <meta property="og:url" content="http://yoursite.com/2016/12/21/crawl笔记0/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
 <meta property="og:description" content="爬虫爬取知乎 ROUND ONE – 知乎模拟登录
-主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~">
-<meta property="og:updated_time" content="2017-02-02T12:51:15.000Z">
+主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~
+准备阶段1.chrome自带的工具分析network； –&amp;gt">
+<meta property="og:updated_time" content="2017-02-02T13:20:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一招教会你 模拟登录知乎">
 <meta name="twitter:description" content="爬虫爬取知乎 ROUND ONE – 知乎模拟登录
-主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~">
+主要思路简述希望能给同在爬虫挣扎的同学一点有用的分享。编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~
+准备阶段1.chrome自带的工具分析network； –&amp;gt">
 
 
 
@@ -318,8 +321,8 @@
 
       
         <p>爬虫爬取知乎 ROUND ONE – 知乎模拟登录</p>
-<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~<br><a id="more"></a></p>
-<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码   </p>
+<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~</p>
+<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码<br><a id="more"></a></p>
 <h1 id="编程阶段"><a href="#编程阶段" class="headerlink" title="编程阶段"></a>编程阶段</h1><p>1.由于最终目的是完成知乎信息的爬取(我会继续努力哒！~)，所以只是将模拟登录作为一个类来编写。<br>2.由于登录过程步骤略多，所以分为<strong>init</strong>()/is_login()/get_xsrf()/get_captcha()/login_zh/main() 这几个功能模块。<br>其含义是 初始化/判断是否已经登录/得到_xrsfz值/获取验证码/模拟登录/主函数入口。<br>3.动动手 写代码</p>
 <h1 id="代码参考"><a href="#代码参考" class="headerlink" title="代码参考"></a>代码参考</h1><h2 id="init"><a href="#init" class="headerlink" title="init()"></a><strong>init</strong>()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.agent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'</span></span><br><span class="line">    self.header = &#123;</span><br><span class="line">        <span class="string">'Host'</span>: <span class="string">'www.zhihu.com'</span>,</span><br><span class="line">        <span class="string">'Referer'</span>: <span class="string">'https://www.zhihu.com/'</span>,<span class="comment">#服务器有时候判断时需要使用，告诉服务器请求是从那个页面过来的</span></span><br><span class="line">        <span class="string">'User-Agent'</span>: self.agent</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    self.session = requests.session()</span><br><span class="line">    <span class="comment"># cookielib类提供操作cookie的一系列方法,提供可存储的cookie对象。</span></span><br><span class="line">    self.session.cookies = cookielib.LWPCookieJar(filename=<span class="string">'cookies'</span>)  <span class="comment"># CookieJar 类可以捕获cookie 以便在后续需要cookie的时候,可以重新发送。</span></span><br><span class="line">    <span class="comment"># s所以这一句 是将获取的cookie存储在文件名为'cookies'的文件中,并且把cookie的值赋值给session的cookies属性。</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        self.session.cookies.load(ignore_discard=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'cookie 未能加载'</span></span><br></pre></td></tr></table></figure>
 <h3 id="is-login"><a href="#is-login" class="headerlink" title="is_login()"></a>is_login()</h3><p>通过试图访问知乎内部设置的办法，判断是否登录。（未登录将返回301code）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_login</span><span class="params">(self)</span>:</span></span><br><span class="line">    url = <span class="string">'http://www.zhihu.com/settings/profile'</span></span><br><span class="line">    login_code = self.session.get(url, headers=self.header, allow_redirects=<span class="keyword">False</span>).status_code</span><br><span class="line">    <span class="keyword">if</span> login_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>

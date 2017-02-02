@@ -419,7 +419,8 @@
       
         
           <p>爬虫爬取知乎 ROUND ONE – 知乎模拟登录</p>
-<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~<br>
+<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~</p>
+<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/12/21/crawl笔记0/#more" rel="contents">
               More &raquo;
@@ -613,7 +614,9 @@
 
       
         
-          <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器<br>写下过程。这里使用ckeditor编辑器<br>
+          <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器<br>写下过程。这里使用ckeditor编辑器</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>下载安装django-ckeditor。使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-ckeditor</span><br></pre></td></tr></table></figure></p>
+<p>其中遇到了pip的更新问题。使用提供的 sudo -i pip install –upgrade pip 遇到错误。</br><br>经过搜索 ,下列语句可以完美解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/28/editor/#more" rel="contents">
               More &raquo;
