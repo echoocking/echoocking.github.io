@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="echo,python,selenuim,echoocking" />
+  <meta name="keywords" content="反反爬虫," />
 
 
 
@@ -102,15 +102,19 @@
 
 
 
-<meta name="description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="echoocking’s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="爬虫与反爬虫爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。
+策略主要思路是项目set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="③反爬虫机制ALL">
+<meta property="og:url" content="http://yoursite.com/2017/02/04/反爬虫机制/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta property="og:description" content="爬虫与反爬虫爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。
+策略主要思路是项目set">
+<meta property="og:updated_time" content="2017-02-04T13:51:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="echoocking’s blog">
-<meta name="twitter:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta name="twitter:title" content="③反爬虫机制ALL">
+<meta name="twitter:description" content="爬虫与反爬虫爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。
+策略主要思路是项目set">
 
 
 
@@ -131,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/04/反爬虫机制/"/>
 
-  <title> echoocking’s blog </title>
+  <title> ③反爬虫机制ALL | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,9 +255,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -275,10 +277,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/02/04/反爬虫机制/" itemprop="url">
-                  ③反爬虫机制ALL
-                </a>
+                ③反爬虫机制ALL
               
             
           </h1>
@@ -318,9 +317,7 @@
       
 
       
-        
-          
-            <h1 id="爬虫与反爬虫"><a href="#爬虫与反爬虫" class="headerlink" title="爬虫与反爬虫"></a>爬虫与反爬虫</h1><p><code>爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...</code>^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。</p>
+        <h1 id="爬虫与反爬虫"><a href="#爬虫与反爬虫" class="headerlink" title="爬虫与反爬虫"></a>爬虫与反爬虫</h1><p><code>爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...</code>^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。</p>
 <h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><p>主要思路是项目setting设置以及使用网上免费提供的大陆高匿IP代理.实现当IP被禁止时自动切换新的高匿IP的代理。即在spider里检查是否被ban, 如果被ban了则重新yield一个请求, 并设置meta[“change_proxy”]=True, 然后在middleware里的process_request处检查这个属性, 如果为True则更换代理.还有个问题就是代理数量不足的问题. 由于免费代理一般都是临时性的, 随着运行时间的增长, 有些代理会失效, 这样到最后就没有可用的代理了. 于是我在新的ProxyMiddleware里, 每次换新代理时检查代理列表中有效代理的数量, 如果小于一个阈值, 则从网上抓新的免费代理扩充代理列表.</p>
 <h1 id="放慢抓取速度"><a href="#放慢抓取速度" class="headerlink" title="放慢抓取速度"></a>放慢抓取速度</h1><p>减小对于目标网站造成的压力。</p>
 <h2 id="禁用cookies"><a href="#禁用cookies" class="headerlink" title="禁用cookies"></a>禁用cookies</h2><p> <code>setting文件中设置COOKIES_ENABLED=False</code></p>
@@ -333,435 +330,58 @@
 <h2 id="判断是否被BAN"><a href="#判断是否被BAN" class="headerlink" title="判断是否被BAN"></a>判断是否被BAN</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def parse(self, response):</span><br><span class="line">    if banned():</span><br><span class="line">        yield Request(url=response.url,</span><br><span class="line">                      meta=&#123;&quot;change_proxy&quot;: True&#125;,</span><br><span class="line">                      callback=self.parse)</span><br><span class="line">    else:</span><br><span class="line">        pass</span><br></pre></td></tr></table></figure>
 <p>根据自己爬下来返回的内容判断是否被ban后，完成自动更换代理。<br>不重复造轮子啦，去搜了一个 完全满足要求~<br>使用 HttpProxyMiddleware<br><a href="https://github.com/kohn/HttpProxyMiddleware" target="_blank" rel="external">https://github.com/kohn/HttpProxyMiddleware</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/02/github使用技巧/" itemprop="url">
-                  github 使用技巧之初零
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-02T00:00:00+08:00" content="2017-02-02">
-              2017-02-02
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/反反爬虫/" rel="tag">#反反爬虫</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="lead"><a href="#lead" class="headerlink" title="lead"></a>lead</h1><p>github是所需要学习的一个系列，学到的就写下以防时间的腐蚀。这是第一篇，新的开始。本篇的目的是将hexo 中所需的图片上传至github中，以达到about页面可以永久引用该图片的目的。这一阶段以将本地下载的图片成功上传至github中为结束。</p>
-<h1 id="step"><a href="#step" class="headerlink" title="step"></a>step</h1><ul>
-<li>在github网页端创建一个仓库或者使用命令行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:echoocking/test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/02/github使用技巧/#more" rel="contents">
-              More &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/02/github使用技巧/" rel="next" title="github 使用技巧之初零">
+                <i class="fa fa-chevron-left"></i> github 使用技巧之初零
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/25/自动化+爬取知乎热门问题/" itemprop="url">
-                  第二招自动化+scrapy爬虫爬取知乎
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-25T18:12:58+08:00" content="2017-01-25">
-              2017-01-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>TryToZH项目的目的是爬取知乎热门问题的高票答案的一个项目。完成模拟登录的之后，开始获取内部的内容。由于知乎话题广场之中是通过各个分类进行索引，所以本项目使用其中一个大分类作为爬虫的入口，通过爬虫进入分类下的问题集合页，爬取热门问题的链接。ZH是以Js的方式动态生成数据且以滚动页面的方式进行分页。所以这里实现通过scrapy+selenium自动化爬取内容链接。<br>tips：接上篇模拟登录，没看第一篇的同学先补补课          </p>
-<h1 id="scrapy-爬虫框架"><a href="#scrapy-爬虫框架" class="headerlink" title="scrapy 爬虫框架"></a>scrapy 爬虫框架</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
-<p>“ Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。<br>应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。<br>其最初是为了 页面抓取 (更确切来说, 网络抓取 )所设计的。<br>也可以应用在获取API所返回的数据(例如 AmazonAssociates Web Services )或者通用的网络爬虫。”</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/25/自动化+爬取知乎热门问题/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/12/21/crawl笔记0/" itemprop="url">
-                  一招教会你 模拟登录知乎
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-21T15:24:00+08:00" content="2016-12-21">
-              2016-12-21
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>爬虫爬取知乎 ROUND ONE – 知乎模拟登录</p>
-<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~</p>
-<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/21/crawl笔记0/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/装饰器/" itemprop="url">
-                  Python--装饰器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T14:25:40+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
-<pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/18/装饰器/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -769,6 +389,18 @@
 
 
           
+  <div class="comments" id="comments">
+      <!--高速版-->
+          <div id="SOHUCS"></div>
+              <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+                  <script type="text/javascript">
+                          window.changyan.api.config({
+                                          appid: 'cyssoTPza',
+                                                      conf:'prod_7db1c6ab937241b4a2858a55f9bf2b33'
+                                                              });
+                              </script>        
+                                </div>
+                                
 
         </div>
         
@@ -788,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -852,6 +493,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫与反爬虫"><span class="nav-number">1.</span> <span class="nav-text">爬虫与反爬虫</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略"><span class="nav-number">2.</span> <span class="nav-text">策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#放慢抓取速度"><span class="nav-number">3.</span> <span class="nav-text">放慢抓取速度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用cookies"><span class="nav-number">3.1.</span> <span class="nav-text">禁用cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置延迟下载"><span class="nav-number">3.2.</span> <span class="nav-text">设置延迟下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加更多的USER-AGENTS"><span class="nav-number">3.3.</span> <span class="nav-text">添加更多的USER_AGENTS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#突破反爬虫机制继续高频率抓取"><span class="nav-number">4.</span> <span class="nav-text">突破反爬虫机制继续高频率抓取</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#激活下载器中间件"><span class="nav-number">4.1.</span> <span class="nav-text">激活下载器中间件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写自己的下载器中间件"><span class="nav-number">4.2.</span> <span class="nav-text">编写自己的下载器中间件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从各个网站抓取免费代理"><span class="nav-number">4.3.</span> <span class="nav-text">从各个网站抓取免费代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断是否被BAN"><span class="nav-number">4.4.</span> <span class="nav-text">判断是否被BAN</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -951,6 +603,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
