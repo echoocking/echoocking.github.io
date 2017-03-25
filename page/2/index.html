@@ -270,6 +270,111 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/18/装饰器/" itemprop="url">
+                  Python--装饰器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T14:25:40+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:33+08:00" content="2017-02-02">
+             2017-02-02
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/装饰器/#more" rel="contents">
+              More &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/28/editor/" itemprop="url">
                   django博客搭建之富文本编辑器
                 </a>
@@ -325,6 +430,109 @@
 <p>其中遇到了pip的更新问题。使用提供的 sudo -i pip install –upgrade pip 遇到错误。</br><br>经过搜索 ,下列语句可以完美解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/28/editor/#more" rel="contents">
+              More &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
+                  requests库
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
+              2016-06-09
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:39+08:00" content="2017-02-02">
+             2017-02-02
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><p>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。<br>例如 r=requests.get(url)<br>urllib2.urlopen(url).read()功能<br>接下来 我们实践一下 YOYO<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; r=requests.get(<span class="string">'http://www.qiushibaike.com'</span>)</span><br><span class="line">&gt;<span class="keyword">print</span> r.url</span><br><span class="line">http://www.qiushibaike.com/</span><br><span class="line">&gt;<span class="keyword">print</span> r</span><br><span class="line">&lt;Response [<span class="number">200</span>]&gt;</span><br><span class="line">&gt;r.text</span><br><span class="line"><span class="string">u'\n&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span></span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/09/requests库/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -561,215 +769,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
-                  requests库
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
-         
-           <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:39+08:00" content="2017-02-02">
-             2017-02-02
-                        </time>
-                          </span>
-                          
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><p>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。<br>例如 r=requests.get(url)<br>urllib2.urlopen(url).read()功能<br>接下来 我们实践一下 YOYO<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; r=requests.get(<span class="string">'http://www.qiushibaike.com'</span>)</span><br><span class="line">&gt;<span class="keyword">print</span> r.url</span><br><span class="line">http://www.qiushibaike.com/</span><br><span class="line">&gt;<span class="keyword">print</span> r</span><br><span class="line">&lt;Response [<span class="number">200</span>]&gt;</span><br><span class="line">&gt;r.text</span><br><span class="line"><span class="string">u'\n&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span></span><br></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/requests库/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/07/hello-Word/" itemprop="url">
-                  hello Word
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T14:53:57+08:00" content="2016-06-07">
-              2016-06-07
-            </time>
-          </span>
-         
-           <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:37+08:00" content="2017-02-02">
-             2017-02-02
-                        </time>
-                          </span>
-                          
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><em>人要是没有梦想，那跟咸鱼有什么区别？</em><br>有的呀 咸鱼能吃呀</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -810,7 +814,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -270,6 +270,111 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/25/git/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-03-25T22:20:23+08:00" content="2017-03-25">
+              2017-03-25
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-03-25T22:24:03+08:00" content="2017-03-25">
+             2017-03-25
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p> author: echoocking<br> title: git拉<br> tags: [兵器,git]</p>
+<h2 id="date-2017-03-25-22-22-16"><a href="#date-2017-03-25-22-22-16" class="headerlink" title=" date: 2017-03-25 22:22:16"></a> date: 2017-03-25 22:22:16</h2><p>git流程操作以及git补救操作。<br>1.git init<br>    创建一个git本地库，现在暂时是空的。<br>2.vi .gitignore<br>    在项目根目录下创建一个git的忽略目录。<br>    不然git就是 你写啥，敢传啥，pyc一大把。说多了都是泪呀。<br>2.git add<br>    如果你没有创gitignore的前车之鉴，那么恭喜你。<br>    你可能要翻车了。😄喜闻乐见。<br>    然而善(翻)良(车)如(无)我(数)，git rm -r –cached,这个可以将之前add的文件删除，重新变为untracked。<br>3.gst<br>    看看现在库里的状态，有哪些添加了的。那些改变的 blablabla的。。<br>4.git diff <head><br>    不放心的话，可以用这个命令 看到具体的语句的更改<br>    反正从来对自己保持怀疑态度<br>    杜绝自己走上 从删库到跑路的 不归路<br>5.git commit -m ‘bbb’<br>    提交到本地代码库<br>    如果提交了，错了 呵呵，很正常。<br>    重新修改后<br>    git commit -amend<br>    只会产生一次提交。<br>6.git add origin ‘url’<br>7.git push origin</head></p>
+<p>提交代码的时候，一定要确认没有问题的话再提交。要淡定。<br>合作的话，先从远端pull代码下来，然后merge，有冲突解决冲突（解决冲突不要改远端的代码，可以对照着github上面调整自己的代码）。然后再进行代码的编写，然后重复2-7</p>
+<p>遇到坑，再更，i will keep following。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/04/反爬虫机制/" itemprop="url">
                   ③反爬虫机制ALL
                 </a>
@@ -676,116 +781,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/18/装饰器/" itemprop="url">
-                  Python--装饰器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T14:25:40+08:00" content="2016-07-18">
-              2016-07-18
-            </time>
-          </span>
-         
-           <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:33+08:00" content="2017-02-02">
-             2017-02-02
-                        </time>
-                          </span>
-                          
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
-<pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/18/装饰器/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -826,7 +826,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
