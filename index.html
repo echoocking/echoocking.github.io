@@ -283,7 +283,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-03-25T23:06:00+08:00" content="2017-03-25">
               2017-03-25
             </time>
@@ -291,7 +291,7 @@
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-03-26T09:32:37+08:00" content="2017-03-26">
+           <time itemprop="dateUpdated" datetime="2017-03-26T09:35:03+08:00" content="2017-03-26">
              2017-03-26
                         </time>
                           </span>
@@ -321,16 +321,14 @@
       
         
           
-            <p>&emsp;&emsp;立一个新的flag，也算为自己开一个新坑。打算由浅入深的比较系统的学习一下进程和线程的相关知识。这是该系列的第一篇，主要介绍概念性的东西，以后慢慢的（也许快快的~）会加入更经典的关于进程、线程处理的代码。</p>
-<p>&emsp;&emsp;&emsp;&emsp;进程 – 程序的一次执行<br>&emsp;&emsp;&emsp;&emsp;线程 – CPU调度的最小单位</p>
-<p>&emsp;&emsp;看到这里，这个定义下的其实我有点奇怪。根据这个定义的话，那么网上关于mutilprocessing的很多的例子看起来就比较的没有内涵。</p>
+            <p>&emsp;&emsp;立一个新的flag，也算为自己开一个新坑。打算由浅入深的比较系统的学习一下进程和线程的相关知识。这是该系列的第一篇，主要介绍概念性的东西，以后慢慢的（也许快快的~）会加入更经典的关于进程、线程处理的代码。<br>&emsp;&emsp;&emsp;&emsp;进程 – 程序的一次执行<br>&emsp;&emsp;&emsp;&emsp;线程 – CPU调度的最小单位<br>&emsp;&emsp;看到这里，这个定义下的其实我有点奇怪。根据这个定义的话，那么网上关于mutilprocessing的很多的例子看起来就比较的没有内涵。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doubler</span><span class="params">(number)</span>:</span></span><br><span class="line">    result = number * <span class="number">2</span></span><br><span class="line">    pid = os.getpid()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    nums = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>]</span><br><span class="line">    procs = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        process = Process(target=double, args=(num))</span><br><span class="line">        procs.append(process)</span><br><span class="line">        process.start</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> process <span class="keyword">in</span> procs:</span><br><span class="line">        process.join()</span><br></pre></td></tr></table></figure>
 <pre><code>这代码写的, 基本上就是只有告诉我os.getpid能获取pid的作用了。
 这个完全换成线程也一样好不好。
 </code></pre><p>进程和线程的主要功能，是提高cpu的利用的效率，缩短程序运行的时间。<br>&emsp;&emsp;每个进程，应该负责一个较为独立的功能或者根本就是一个独立的程序的。进程是有自己的独立的区域的，进程间需要通信的话，一般使用Queue或者Pipes（Queue是进程、线程安全的。Pipes双工通信。一个安全，一个快。）。Chrome就是一个典型的多进程程序，里面每个标签页、扩展、插件都是单独的进程，各自独占资源，相互隔离，一个进程出错死掉只会影响一个页面或者插件，再也不会出现Flash插件出错崩溃导致整个浏览器崩溃的情况了。<br>&emsp;&emsp;线程的话，一般多个线程被包含在一个进程里，cpu调度的基本单位是线程，所以拥有多个线程的话，就近似于程序跑在多个cpu上，并且程序的各个线程都在并行的执行。线程的资源是共享的，父进程的资源由所有线程共享，但是各个线程可以独自拥有自己的变量。由于线程间共享进程中的全局变量，所以当其他线程改变了共享的变量时，可能会对本线程产生影响。所谓线程安全的约束是指一个函数被多个并发线程反复调用时，要一直产生正确的结果。要保证线程安全，主要是通过加锁的方式保证共享变量的正确访问。</p>
 <p>其他：<br> &emsp;&emsp;<strong>init</strong>方法在对象被创建后立即触发</p>
 <p>垃圾回收机制<br>&emsp;&emsp;Python 采用垃圾回收机制来清理不再使用的对象；Python 提供gc模块释放不再使用的对象，Python 采用‘引用计数’ 的算法方式来处理回收，即：当某个对象在其作用域内不再被其他对象引用的时候，Python 就自动清除对象；Python 的函数collect()可以一次性收集所有待处理的对象(gc.collect())</p>
-<p>进程、线程大概的基础理论就差不多是这样，会另外找时间 把关于进程、线程的生命周期的内容补上。<br>下一篇的主要内容应该会是，锁的机制，以及进程、线程的调度。<br>下下篇：scrapy框架的多线程的使用。<br>I will keep following, ヽ(^ ^)ノ</p>
+<p>进程、线程大概的基础理论就差不多是这样，另外找时间把关于进程、线程的生命周期的内容补上。<br>next will be -&gt; 锁的机制，以及进程、线程的调度。<br>next next -&gt; scrapy框架的多线程的使用。<br>I will keep following, ヽ(^ ^)ノ</p>
 
           
         
@@ -393,7 +391,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-03-25T22:22:16+08:00" content="2017-03-25">
               2017-03-25
             </time>
@@ -496,7 +494,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-02-04T21:51:27+08:00" content="2017-02-04">
               2017-02-04
             </time>
@@ -605,7 +603,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-02-02T00:00:00+08:00" content="2017-02-02">
               2017-02-02
             </time>
@@ -712,7 +710,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2017-01-25T18:12:58+08:00" content="2017-01-25">
               2017-01-25
             </time>
