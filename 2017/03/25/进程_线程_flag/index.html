@@ -102,10 +102,13 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/25/进程_线程_flag/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;立一个新的flag，也算为自己开一个新坑。打算由浅入深的比较系统的学习一下进程和线程的相关知识。这是该系列的第一篇，主要介绍概念性的东西，以后慢慢的（也许快快的~）会加入更经典的关于进程、线程处理的代码。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;进程 – 程序的一次执行&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;线程 – CPU调度的最小单位&amp;emsp;&amp;emsp">
-<meta property="og:updated_time" content="2017-03-26T01:35:03.000Z">
+<meta property="og:image" content="https://www.ibm.com/developerworks/cn/linux/l-ipc/part2/index1.html">
+<meta property="og:image" content="http://img.it610.com/image/info5/1dc37b1ed0c2459fb478b529d6f1eb60.jpg">
+<meta property="og:updated_time" content="2017-03-27T09:45:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="进程、线程 -- flag篇">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;立一个新的flag，也算为自己开一个新坑。打算由浅入深的比较系统的学习一下进程和线程的相关知识。这是该系列的第一篇，主要介绍概念性的东西，以后慢慢的（也许快快的~）会加入更经典的关于进程、线程处理的代码。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;进程 – 程序的一次执行&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;线程 – CPU调度的最小单位&amp;emsp;&amp;emsp">
+<meta name="twitter:image" content="https://www.ibm.com/developerworks/cn/linux/l-ipc/part2/index1.html">
 
 
 
@@ -279,7 +282,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-03-25T23:06:00+08:00" content="2017-03-25">
               2017-03-25
             </time>
@@ -287,8 +290,8 @@
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-03-26T09:35:03+08:00" content="2017-03-26">
-             2017-03-26
+           <time itemprop="dateUpdated" datetime="2017-03-27T17:45:49+08:00" content="2017-03-27">
+             2017-03-27
                         </time>
                           </span>
                           
@@ -322,7 +325,10 @@
 </code></pre><p>进程和线程的主要功能，是提高cpu的利用的效率，缩短程序运行的时间。<br>&emsp;&emsp;每个进程，应该负责一个较为独立的功能或者根本就是一个独立的程序的。进程是有自己的独立的区域的，进程间需要通信的话，一般使用Queue或者Pipes（Queue是进程、线程安全的。Pipes双工通信。一个安全，一个快。）。Chrome就是一个典型的多进程程序，里面每个标签页、扩展、插件都是单独的进程，各自独占资源，相互隔离，一个进程出错死掉只会影响一个页面或者插件，再也不会出现Flash插件出错崩溃导致整个浏览器崩溃的情况了。<br>&emsp;&emsp;线程的话，一般多个线程被包含在一个进程里，cpu调度的基本单位是线程，所以拥有多个线程的话，就近似于程序跑在多个cpu上，并且程序的各个线程都在并行的执行。线程的资源是共享的，父进程的资源由所有线程共享，但是各个线程可以独自拥有自己的变量。由于线程间共享进程中的全局变量，所以当其他线程改变了共享的变量时，可能会对本线程产生影响。所谓线程安全的约束是指一个函数被多个并发线程反复调用时，要一直产生正确的结果。要保证线程安全，主要是通过加锁的方式保证共享变量的正确访问。</p>
 <p>其他：<br> &emsp;&emsp;<strong>init</strong>方法在对象被创建后立即触发</p>
 <p>垃圾回收机制<br>&emsp;&emsp;Python 采用垃圾回收机制来清理不再使用的对象；Python 提供gc模块释放不再使用的对象，Python 采用‘引用计数’ 的算法方式来处理回收，即：当某个对象在其作用域内不再被其他对象引用的时候，Python 就自动清除对象；Python 的函数collect()可以一次性收集所有待处理的对象(gc.collect())</p>
-<p>进程、线程大概的基础理论就差不多是这样，另外找时间把关于进程、线程的生命周期的内容补上。<br>next will be -&gt; 锁的机制，以及进程、线程的调度。<br>next next -&gt; scrapy框架的多线程的使用。<br>I will keep following, ヽ(^ ^)ノ</p>
+<p>进程、线程大概的基础理论就差不多是这样，另外找时间把关于进程、线程的生命周期的内容补上。</p>
+<p>进程的生命周期分为 创建-（-&gt;就绪&lt;-&gt;运行-&gt;阻塞-&gt;）-结束<br>1.就绪是进程被CPU分配的资源等就位、等待处理机的状态。<br>2.运行 是CPU调度，可以执行程序。如果时间片到，那么转为就绪态，就绪态可直接转为运行态<br>3.阻塞，需要等待I/O啦或者 其他的资源被其他进程占用时，由运行态转为阻塞，阻塞不能直接转为运行，必须先转为就绪。<br>&emsp;&emsp;阻塞后，会相应的转入可中断睡眠状态和不可中断睡眠状态。两者区分是不可中断睡眠状态，不能被发送信号或者说中断。<br>&emsp;&emsp;其中信号量与信号是不同的概念（虽然名字非常像），信号是进程间通信时使用的，大致的作用是中断进程的运行或者杀死进程（触发信号的事件发生（如检测到硬件异常、定时器超时以及调用信号发送函数kill()或sigqueue()等））<img src="https://www.ibm.com/developerworks/cn/linux/l-ipc/part2/index1.html" alt="信号详情请戳">，信号量是为了保护可能产生冲突的变量而使用的，主要为了防止多个进程同时使用某些资源。也就是实现了LOCK的机制。用户可以定义两个或多个的信号量，意味着可以由两个或者多个进程对于保护的资源进行访问或者操作。<br>&emsp;&emsp;与信号量有类似的功能有自旋锁（mutex），但是mutex是用于保护criticalsection，因为metux只允许一个进程访问，信号量可以多个，所以信号量可以用于进程间的同步，就是资源的同步啦。<br>有空的话，会把进程间通信的理论补上，另外会写一个小的脚本来检验一下。</p>
+<p>线程的生命周期：下次写啦</p>
+<p><img src="http://img.it610.com/image/info5/1dc37b1ed0c2459fb478b529d6f1eb60.jpg" alt="image"><br>next will be -&gt; 锁的机制，以及进程、线程的调度。<br>next next -&gt; scrapy框架的多线程的使用。<br>I will keep following, ヽ(^ ^)ノ</p>
 
       
     </div>
