@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="echo,python,selenuim,echoocking" />
+  <meta name="keywords" content="数据学习," />
 
 
 
@@ -96,15 +96,16 @@
 
 
 
-<meta name="description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="echoocking’s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/06/index.html">
+<meta name="description" content="&amp;esmp;&amp;esmp;爬虫爬取过程中，对于url的去重是较为重要的。爬虫脚本的每一次运行，都需要判断是否这个url以及这个url中的数据曾被获取过。所以研究了一下关于url去重，大致的想法是使用BloomFilter。由于每一个url的地址长度较长，将所有url的信息全部读入到内存中效率太低，BloomFilter的原理是 找到K个适合的hash函数，每个高效的hash函数可以将url映射到内存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BloomFilter 初始零">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/BloomFilter之0/index.html">
 <meta property="og:site_name" content="echoocking’s blog">
-<meta property="og:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta property="og:description" content="&amp;esmp;&amp;esmp;爬虫爬取过程中，对于url的去重是较为重要的。爬虫脚本的每一次运行，都需要判断是否这个url以及这个url中的数据曾被获取过。所以研究了一下关于url去重，大致的想法是使用BloomFilter。由于每一个url的地址长度较长，将所有url的信息全部读入到内存中效率太低，BloomFilter的原理是 找到K个适合的hash函数，每个高效的hash函数可以将url映射到内存">
+<meta property="og:updated_time" content="2017-03-28T07:07:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="echoocking’s blog">
-<meta name="twitter:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta name="twitter:title" content="BloomFilter 初始零">
+<meta name="twitter:description" content="&amp;esmp;&amp;esmp;爬虫爬取过程中，对于url的去重是较为重要的。爬虫脚本的每一次运行，都需要判断是否这个url以及这个url中的数据曾被获取过。所以研究了一下关于url去重，大致的想法是使用BloomFilter。由于每一个url的地址长度较长，将所有url的信息全部读入到内存中效率太低，BloomFilter的原理是 找到K个适合的hash函数，每个高效的hash函数可以将url映射到内存">
 
 
 
@@ -125,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2016/06/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/28/BloomFilter之0/"/>
 
-  <title> 归档 | echoocking’s blog </title>
+  <title> BloomFilter 初始零 | echoocking’s blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -148,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,214 +247,129 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      噫...! 作者奋笔疾书，已经写了 13 篇文章。 加油加油！
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/28/editor/" itemprop="url">
-              
-                <span itemprop="name">django博客搭建之富文本编辑器</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-28T16:25:17+08:00"
-              content="2016-06-28" >
-          06-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
-              
-                <span itemprop="name">requests库</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-09T16:19:10+08:00"
-              content="2016-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
-              
-                <span itemprop="name">hexo 问题解决方案</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-09T16:19:10+08:00"
-              content="2016-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
-              
-                <span itemprop="name">闭包的含义</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-09T16:19:10+08:00"
-              content="2016-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/07/hello-Word/" itemprop="url">
-              
-                <span itemprop="name">hello Word</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-07T14:53:57+08:00"
-              content="2016-06-07" >
-          06-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                BloomFilter 初始零
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2017-03-28T14:49:32+08:00" content="2017-03-28">
+              2017-03-28
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-03-28T15:07:46+08:00" content="2017-03-28">
+             2017-03-28
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&esmp;&esmp;爬虫爬取过程中，对于url的去重是较为重要的。爬虫脚本的每一次运行，都需要判断是否这个url以及这个url<br>中的数据曾被获取过。所以研究了一下关于url去重，大致的想法是使用BloomFilter。由于每一个url的地址长度较长，将所有url的信息<br>全部读入到内存中效率太低，BloomFilter的原理是 找到K个适合的hash函数，每个高效的hash函数可以将url映射到内存的一位上，为了避免<br>hash冲突，所以使用多个hash函数进行运算。每个hash函数加密得到一个位数值，数值可以在一个bit数组进行映射，在bit数组中<br>找到该数值对应的位置，并把该位置的值设置为1（默认为零）。K个hash函数就将K位设置为零。需要判断url是否被爬取过，则只需将url<br>使用K个hash函数加密，得到K个值，判断K个值在Bit数组中的映射位置是否全部为1，全部为1的话，那么为了避免误判，可以继续去硬盘中的数据库<br>去找，或者直接认定该url存在。但只要映射的位置，有不为1的情况，那么该数据一定不存在。<br>&esmp;&esmp;原理很简单，具体的实现有几大困难。1.确定hash函数 2.确定bit集合大小 其实想想也不难，毕竟都是有具体的公式的<br>&esmp;&esmp;有空实现一下！！！（好多个有空哎<del>，但是一定会哦</del>）<br>I will keep following~ mua~</p>
+<p>贴一个更加优化的：<br>上面说到的BloomFilter还紧紧是单机内存的，在淘宝这个环境下，显然是不适用的。那么我们如何把他变成分布式的呢？看了标题我想你已经知道了，对了，那就是redis。<br>BloomFilter需要的bit数组与redis的bit操作真是完美契合啊。利用redis的高性能以及通过pipeline将多条bit操作命令批量提交，实现了多机BloomFilter的bit数据共享。唯一需要注意的是redis的bitmap只支持2^32大小，对应到内存也就是512MB,数组的下标最大只能是2^32-1。不过这个限制我们可以通过构建多个redis的bitmap通过hash取模的方式分散一下即可。同时利用上面的公式计算一下：万分之一的误判率，512MB可以放下2亿左右的数据，而目前全网的uv也就8千万，所以，你懂的。<a href="http://it.taocms.org/05/3427.htm" target="_blank" rel="external">链接戳我</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据学习/" rel="tag">#数据学习</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/25/进程_线程_flag/" rel="next" title="进程、线程 -- flag篇">
+                <i class="fa fa-chevron-left"></i> 进程、线程 -- flag篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -461,6 +377,18 @@
 
 
           
+  <div class="comments" id="comments">
+      <!--高速版-->
+          <div id="SOHUCS"></div>
+              <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+                  <script type="text/javascript">
+                          window.changyan.api.config({
+                                          appid: 'cyssoTPza',
+                                                      conf:'prod_7db1c6ab937241b4a2858a55f9bf2b33'
+                                                              });
+                              </script>        
+                                </div>
+                                
 
         </div>
         
@@ -480,8 +408,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -544,6 +481,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -643,11 +591,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
