@@ -283,7 +283,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-03-31T21:44:46+08:00" content="2017-03-31">
               2017-03-31
             </time>
@@ -291,8 +291,8 @@
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-03-31T22:28:58+08:00" content="2017-03-31">
-             2017-03-31
+           <time itemprop="dateUpdated" datetime="2017-04-01T11:20:41+08:00" content="2017-04-01">
+             2017-04-01
                         </time>
                           </span>
                           
@@ -323,7 +323,8 @@
           
             <p>之前学过正则，然后比较久没有用，记忆产生了混乱。<br>开一篇记录一下正则的概念，然后日后遇到其他比较有意思的正则，会继续写入。</p>
 <p>Python正则主要使用re。<br>基础的流程：<br>1.rule = re.compile(regex) 经常被使用的正则表达式的表达可以用compile编译成一个对象，好调用，提高效率<br>2.re.findall(rule, txt)<br>这里需要注意的是 regex的写法，有固定的规则。<br>‘item.abc[0-9]+[a-z]’<br>这个regex的匹配顺序是先逐字匹配item和被转义的’.’符号，然后继续逐字匹配abc然后匹配一个或多个数字然后匹配一个a-z范围内的字符<br>匹配完成后，会返回包含所有匹配成功的字符串的数组。<br>使用中需要注意[]与()的区别<br>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">10</span>]: p3=re.compile(<span class="string">'//item.jd/content/(0-9)+/\.html'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">11</span>]: re.findall(p3,s)</span><br><span class="line">Out[<span class="number">11</span>]: []</span><br><span class="line"></span><br><span class="line">In [<span class="number">12</span>]: p4=re.compile(<span class="string">'/item.jd/content/[0-9]+/\.html'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">13</span>]: re.findall(p4,s)</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="string">'/item.jd/content/19939293/.html'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>[]表示的是一种范围，用于进行正则匹配 例如[0-9]* 关于[]内就是表示0-9的一个字符<br>()是组的概念。一个正则表达式中有一个主组以及可以存在0-99个子组，通过自组可以取出匹配主组成功后的自组的内容</p>
+<p>[]表示的是一种范围，用于进行正则匹配 例如[0-9]* 关于[]内就是表示0-9的一个字符<br>()是组的概念。一个正则表达式中有一个主组以及可以存在0-99个子组，通过自组可以取出匹配主组成功后的自组的内容<br>例子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">11</span>]: s2=<span class="string">'* this is http://item.jd.943434.com * fdjifo f   d 6668**#6 ^&amp;(!^#(3'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">12</span>]: patten2 = <span class="string">'http://item\.jd\.([0-9]*)\.com'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">13</span>]: re.findall(patten2, s2)</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="string">'943434'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>今天得到公司给配MacBook的消息啦~~~开心///转圈[xls]</p>
 
           
         
@@ -386,7 +387,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-03-28T14:49:32+08:00" content="2017-03-28">
               2017-03-28
             </time>
@@ -488,7 +489,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-03-25T23:06:00+08:00" content="2017-03-25">
               2017-03-25
             </time>
@@ -595,7 +596,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-03-25T22:22:16+08:00" content="2017-03-25">
               2017-03-25
             </time>
@@ -698,7 +699,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2017-02-04T21:51:27+08:00" content="2017-02-04">
               2017-02-04
             </time>
