@@ -270,111 +270,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/31/正则表达式填坑/" itemprop="url">
-                  正则表达式填坑
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2017-03-31T21:44:46+08:00" content="2017-03-31">
-              2017-03-31
-            </time>
-          </span>
-         
-           <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-04-03T15:52:12+08:00" content="2017-04-03">
-             2017-04-03
-                        </time>
-                          </span>
-                          
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前学过正则，然后比较久没有用，记忆产生了混乱。<br>开一篇记录一下正则的概念，然后日后遇到其他比较有意思的正则，会继续写入。</p>
-<p>Python正则主要使用re。<br>基础的流程：<br>1.rule = re.compile(regex) 经常被使用的正则表达式的表达可以用compile编译成一个对象，好调用，提高效率<br>2.re.findall(rule, txt)<br>这里需要注意的是 regex的写法，有固定的规则。<br>‘item.abc[0-9]+[a-z]’<br>&emsp;&emsp;这个regex的匹配顺序是先逐字匹配item和被转义的’.’符号，然后继续逐字匹配abc然后匹配一个或多个数字然后匹配一个a-z范围内的字符<br>匹配完成后，会返回包含所有匹配成功的字符串的数组。<br>&emsp;&emsp;使用中需要注意[]与()的区别<br>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">10</span>]: p3=re.compile(<span class="string">'//item.jd/content/(0-9)+/\.html'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">11</span>]: re.findall(p3,s)</span><br><span class="line">Out[<span class="number">11</span>]: []</span><br><span class="line"></span><br><span class="line">In [<span class="number">12</span>]: p4=re.compile(<span class="string">'/item.jd/content/[0-9]+/\.html'</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">13</span>]: re.findall(p4,s)</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="string">'/item.jd/content/19939293/.html'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>[]表示的是一种范围，用于进行正则匹配 例如[0-9]* 关于[]内就是表示0-9的一个字符<br>()是组的概念。一个正则表达式中有一个主组以及可以存在0-99个子组，通过自组可以取出匹配主组成功后的自组的内容,findall以后多个子组使用元组保存在列表中<br>例子:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">4</span>]: p1 = re.compile(<span class="string">'id\.com/([0-9]+)/([0-9a-zA-Z]+)\.com'</span>)</span><br><span class="line">In [<span class="number">6</span>]: re.findall(p1,s)</span><br><span class="line">Out[<span class="number">6</span>]: [(<span class="string">'890890'</span>, <span class="string">'fd8f9u9d908789'</span>)]</span><br><span class="line">In [<span class="number">11</span>]: s2=<span class="string">'* this is http://item.jd.943434.com * fdjifo f   d 6668**#6 ^&amp;(!^#(3'</span></span><br><span class="line">In [<span class="number">12</span>]: patten2 = <span class="string">'http://item\.jd\.([0-9]*)\.com'</span></span><br><span class="line">In [<span class="number">13</span>]: re.findall(patten2, s2)</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="string">'943434'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>今天得到公司给配MacBook的消息啦~~~开心///转圈</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/BloomFilter之0/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/28/tip/" itemprop="url">
                   BloomFilter 初始零
                 </a>
               
@@ -395,8 +291,8 @@
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-03-28T15:12:18+08:00" content="2017-03-28">
-             2017-03-28
+           <time itemprop="dateUpdated" datetime="2017-04-18T14:39:40+08:00" content="2017-04-18">
+             2017-04-18
                         </time>
                           </span>
                           
@@ -425,117 +321,9 @@
       
         
           
-            <p>&emsp;&emsp;爬虫爬取过程中，对于url的去重是较为重要的。爬虫脚本的每一次运行，都需要判断是否这个url以及这个url中的数据曾被获取过。所以研究了一下关于url去重，大致的想法是使用BloomFilter。由于每一个url的地址长度较长，将所有url的信息全部读入到内存中效率太低，BloomFilter的原理是找到K个适合的hash函数，每个高效的hash函数可以将url映射到内存的一位上，为了避免hash冲突，所以使用多个hash函数进行运算。每个hash函数加密得到一个位数值，数值可以在一个bit数组进行映射，在bit数组中找到该数值对应的位置，并把该位置的值设置为1（默认为零）。K个hash函数就将K位设置为零。需要判断url是否被爬取过，则只需将url使用K个hash函数加密，得到K个值，判断K个值在Bit数组中的映射位置是否全部为1，全部为1的话，那么为了避免误判，可以继续去硬盘中的数据库去找，或者直接认定该url存在。但只要映射的位置，有不为1的情况，那么该数据一定不存在。<br>&emsp;&emsp;原理很简单，具体的实现有几大困难。1.确定hash函数 2.确定bit集合大小 其实想想也不难，毕竟都是有具体的公式的<br>&emsp;&emsp;有空实现一下！！！（好多个有空哎<del>，但是一定会哦</del>）<br>I will keep following~ mua~</p>
-<p>贴一个更加优化的：<br>&emsp;&emsp;上面说到的BloomFilter还紧紧是单机内存的，在淘宝这个环境下，显然是不适用的。那么我们如何把他变成分布式的呢？看了标题我想你已经知道了，对了，那就是redis。<br>&emsp;&emsp;BloomFilter需要的bit数组与redis的bit操作真是完美契合啊。利用redis的高性能以及通过pipeline将多条bit操作命令批量提交，实现了多机BloomFilter的bit数据共享。唯一需要注意的是redis的bitmap只支持2^32大小，对应到内存也就是512MB,数组的下标最大只能是2^32-1。不过这个限制我们可以通过构建多个redis的bitmap通过hash取模的方式分散一下即可。同时利用上面的公式计算一下：万分之一的误判率，512MB可以放下2亿左右的数据，而目前全网的uv也就8千万，所以，你懂的。<a href="http://it.taocms.org/05/3427.htm" target="_blank" rel="external">链接戳我</a></p>
+            <p>因为毕业论文查重的问题。所以有些文章先暂时被下掉。等查完再放上来啦。</p>
 
           
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/25/进程_线程_flag/" itemprop="url">
-                  进程、线程 -- flag篇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2017-03-25T23:06:00+08:00" content="2017-03-25">
-              2017-03-25
-            </time>
-          </span>
-         
-           <span class="post-updated">
-            &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-03-27T17:51:13+08:00" content="2017-03-27">
-             2017-03-27
-                        </time>
-                          </span>
-                          
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;立一个新的flag，也算为自己开一个新坑。打算由浅入深的比较系统的学习一下进程和线程的相关知识。这是该系列的第一篇，主要介绍概念性的东西，以后慢慢的（也许快快的~）会加入更经典的关于进程、线程处理的代码。<br>&emsp;&emsp;&emsp;&emsp;进程 – 程序的一次执行<br>&emsp;&emsp;&emsp;&emsp;线程 – CPU调度的最小单位<br>&emsp;&emsp;看到这里，这个定义下的其实我有点奇怪。根据这个定义的话，那么网上关于mutilprocessing的很多的例子看起来就比较的没有内涵。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doubler</span><span class="params">(number)</span>:</span></span><br><span class="line">    result = number * <span class="number">2</span></span><br><span class="line">    pid = os.getpid()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    nums = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>]</span><br><span class="line">    procs = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        process = Process(target=double, args=(num))</span><br><span class="line">        procs.append(process)</span><br><span class="line">        process.start</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> process <span class="keyword">in</span> procs:</span><br><span class="line">        process.join()</span><br></pre></td></tr></table></figure>
-<pre><code>这代码写的, 基本上就是只有告诉我os.getpid能获取pid的作用了。
-这个完全换成线程也一样好不好。
-</code></pre><p>进程和线程的主要功能，是提高cpu的利用的效率，缩短程序运行的时间。<br>&emsp;&emsp;每个进程，应该负责一个较为独立的功能或者根本就是一个独立的程序的。进程是有自己的独立的区域的，进程间需要通信的话，一般使用Queue或者Pipes（Queue是进程、线程安全的。Pipes双工通信。一个安全，一个快。）。Chrome就是一个典型的多进程程序，里面每个标签页、扩展、插件都是单独的进程，各自独占资源，相互隔离，一个进程出错死掉只会影响一个页面或者插件，再也不会出现Flash插件出错崩溃导致整个浏览器崩溃的情况了。<br>&emsp;&emsp;线程的话，一般多个线程被包含在一个进程里，cpu调度的基本单位是线程，所以拥有多个线程的话，就近似于程序跑在多个cpu上，并且程序的各个线程都在并行的执行。线程的资源是共享的，父进程的资源由所有线程共享，但是各个线程可以独自拥有自己的变量。由于线程间共享进程中的全局变量，所以当其他线程改变了共享的变量时，可能会对本线程产生影响。所谓线程安全的约束是指一个函数被多个并发线程反复调用时，要一直产生正确的结果。要保证线程安全，主要是通过加锁的方式保证共享变量的正确访问。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/25/进程_线程_flag/#more" rel="contents">
-              More &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -686,8 +474,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/04/反爬虫机制/" itemprop="url">
-                  ③反爬虫机制ALL
+                <a class="post-title-link" href="/2017/02/02/github使用技巧/" itemprop="url">
+                  github 使用技巧之初零
                 </a>
               
             
@@ -700,14 +488,121 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2017-02-04T21:51:27+08:00" content="2017-02-04">
-              2017-02-04
+            <time itemprop="dateCreated" datetime="2017-02-02T00:00:00+08:00" content="2017-02-02">
+              2017-02-02
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-04T21:56:22+08:00" content="2017-02-04">
+           <time itemprop="dateUpdated" datetime="2017-02-02T20:52:32+08:00" content="2017-02-02">
+             2017-02-02
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="lead"><a href="#lead" class="headerlink" title="lead"></a>lead</h1><p>github是所需要学习的一个系列，学到的就写下以防时间的腐蚀。这是第一篇，新的开始。本篇的目的是将hexo 中所需的图片上传至github中，以达到about页面可以永久引用该图片的目的。这一阶段以将本地下载的图片成功上传至github中为结束。</p>
+<h1 id="step"><a href="#step" class="headerlink" title="step"></a>step</h1><ul>
+<li>在github网页端创建一个仓库或者使用命令行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:echoocking/test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/02/github使用技巧/#more" rel="contents">
+              More &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/21/crawl笔记0/" itemprop="url">
+                  ①一招教会你 模拟登录知乎
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-12-21T15:24:00+08:00" content="2016-12-21">
+              2016-12-21
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-02-04T21:54:26+08:00" content="2017-02-04">
              2017-02-04
                         </time>
                           </span>
@@ -736,15 +631,116 @@
 
       
         
-          <h1 id="爬虫与反爬虫"><a href="#爬虫与反爬虫" class="headerlink" title="爬虫与反爬虫"></a>爬虫与反爬虫</h1><p><code>爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...</code>^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。</p>
-<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><p>主要思路是项目setting设置+使用网上免费提供的大陆高匿IP代理.实现当IP被禁止时自动切换新的高匿IP的代理。即在spider里检查是否被ban, 如果被ban了则重新yield一个请求, 并设置meta[“change_proxy”]=True, 然后在middleware里的process_request处检查这个属性, 如果为True则更换代理.还有个问题就是代理数量不足的问题. 由于免费代理一般都是临时性的, 随着运行时间的增长, 有些代理会失效, 这样到最后就没有可用的代理了. 于是我在新的ProxyMiddleware里, 每次换新代理时检查代理列表中有效代理的数量, 如果小于一个阈值, 则从网上抓新的免费代理扩充代理列表.</p>
-<h1 id="放慢抓取速度"><a href="#放慢抓取速度" class="headerlink" title="放慢抓取速度"></a>放慢抓取速度</h1><p>减小对于目标网站造成的压力。</p>
-<h2 id="禁用cookies"><a href="#禁用cookies" class="headerlink" title="禁用cookies"></a>禁用cookies</h2><p> <code>setting文件中设置COOKIES_ENABLED=False</code></p>
-<h2 id="设置延迟下载"><a href="#设置延迟下载" class="headerlink" title="设置延迟下载"></a>设置延迟下载</h2><p> <code>setting文件中设置DOWNLOAD_DELAY=10</code></p>
-<h2 id="添加更多的USER-AGENTS"><a href="#添加更多的USER-AGENTS" class="headerlink" title="添加更多的USER_AGENTS"></a>添加更多的USER_AGENTS</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENTS = [</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20"</span>,</span><br><span class="line">    <span class="string">"Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h1 id="突破反爬虫机制继续高频率抓取"><a href="#突破反爬虫机制继续高频率抓取" class="headerlink" title="突破反爬虫机制继续高频率抓取"></a>突破反爬虫机制继续高频率抓取</h1><p>在网络爬虫抓取信息的过程中，如果抓取频率高过了网站的设置阀值，将会被禁止访问。通常，网站的反爬虫机制都是依据IP来标识爬虫的。<br>通过使用高匿IP突破反爬虫机制继续高频率抓取。高匿名代理不改变客户机的请求，这样在服务器看来就像有个真正的客户浏览器在访问它，这时客户的真实IP是隐藏的，服务器端不会认为我们使用了代理。但是这样需要多个稳定的代理IP。有了多个稳定的IP后，在高过了网站的设置阀值被禁止访问时可以自动切换IP绕过网站防御机制，继续进行爬取。<br>
+          <p>爬虫爬取知乎 ROUND ONE – 知乎模拟登录</p>
+<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~</p>
+<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/04/反爬虫机制/#more" rel="contents">
+            <a class="btn" href="/2016/12/21/crawl笔记0/#more" rel="contents">
+              More &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/18/装饰器/" itemprop="url">
+                  Python--装饰器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T14:25:40+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+         
+           <span class="post-updated">
+            &nbsp; | &nbsp; 更新于
+           <time itemprop="dateUpdated" datetime="2017-03-25T22:30:38+08:00" content="2017-03-25">
+             2017-03-25
+                        </time>
+                          </span>
+                          
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/装饰器/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -778,7 +774,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -819,7 +815,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -829,7 +825,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
