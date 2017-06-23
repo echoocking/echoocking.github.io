@@ -270,8 +270,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/28/editor/" itemprop="url">
-                  django博客搭建之富文本编辑器
+                <a class="post-title-link" href="/2017/02/04/反爬虫机制/" itemprop="url">
+                  ③反爬虫机制ALL
                 </a>
               
             
@@ -283,16 +283,16 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T16:25:17+08:00" content="2016-06-28">
-              2016-06-28
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-02-04T21:51:27+08:00" content="2017-02-04">
+              2017-02-04
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:37+08:00" content="2017-02-02">
-             2017-02-02
+           <time itemprop="dateUpdated" datetime="2017-02-04T21:56:22+08:00" content="2017-02-04">
+             2017-02-04
                         </time>
                           </span>
                           
@@ -320,11 +320,15 @@
 
       
         
-          <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>手把手教django博客搭建的教程非常多了，在此不在赘述。主要是就今天为博客后台添加富文本编辑器<br>写下过程。这里使用ckeditor编辑器</p>
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>下载安装django-ckeditor。使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-ckeditor</span><br></pre></td></tr></table></figure></p>
-<p>其中遇到了pip的更新问题。使用提供的 sudo -i pip install –upgrade pip 遇到错误。</br><br>经过搜索 ,下列语句可以完美解决。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure></p>
+          <h1 id="爬虫与反爬虫"><a href="#爬虫与反爬虫" class="headerlink" title="爬虫与反爬虫"></a>爬虫与反爬虫</h1><p><code>爬虫(Spider)，反爬虫(Anti-Spider)，反反爬虫(Anti-Anti-Spider)，这之间的斗争恢宏壮阔...</code>^_^很有意思的一句话，但是八九不离十。但是众所周知结论已经注定了，在爬虫与反爬虫的对弈中，爬虫一定会胜利。作为胜利的一方哈哈，留下只言片语啦。这是本系列记录的第三篇文章，主要是讨论如何防止ban、绕过网站的防御措施尽量多的爬取数据。</p>
+<h1 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h1><p>主要思路是项目setting设置+使用网上免费提供的大陆高匿IP代理.实现当IP被禁止时自动切换新的高匿IP的代理。即在spider里检查是否被ban, 如果被ban了则重新yield一个请求, 并设置meta[“change_proxy”]=True, 然后在middleware里的process_request处检查这个属性, 如果为True则更换代理.还有个问题就是代理数量不足的问题. 由于免费代理一般都是临时性的, 随着运行时间的增长, 有些代理会失效, 这样到最后就没有可用的代理了. 于是我在新的ProxyMiddleware里, 每次换新代理时检查代理列表中有效代理的数量, 如果小于一个阈值, 则从网上抓新的免费代理扩充代理列表.</p>
+<h1 id="放慢抓取速度"><a href="#放慢抓取速度" class="headerlink" title="放慢抓取速度"></a>放慢抓取速度</h1><p>减小对于目标网站造成的压力。</p>
+<h2 id="禁用cookies"><a href="#禁用cookies" class="headerlink" title="禁用cookies"></a>禁用cookies</h2><p> <code>setting文件中设置COOKIES_ENABLED=False</code></p>
+<h2 id="设置延迟下载"><a href="#设置延迟下载" class="headerlink" title="设置延迟下载"></a>设置延迟下载</h2><p> <code>setting文件中设置DOWNLOAD_DELAY=10</code></p>
+<h2 id="添加更多的USER-AGENTS"><a href="#添加更多的USER-AGENTS" class="headerlink" title="添加更多的USER_AGENTS"></a>添加更多的USER_AGENTS</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">USER_AGENTS = [</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20"</span>,</span><br><span class="line">    <span class="string">"Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="突破反爬虫机制继续高频率抓取"><a href="#突破反爬虫机制继续高频率抓取" class="headerlink" title="突破反爬虫机制继续高频率抓取"></a>突破反爬虫机制继续高频率抓取</h1><p>在网络爬虫抓取信息的过程中，如果抓取频率高过了网站的设置阀值，将会被禁止访问。通常，网站的反爬虫机制都是依据IP来标识爬虫的。<br>通过使用高匿IP突破反爬虫机制继续高频率抓取。高匿名代理不改变客户机的请求，这样在服务器看来就像有个真正的客户浏览器在访问它，这时客户的真实IP是隐藏的，服务器端不会认为我们使用了代理。但是这样需要多个稳定的代理IP。有了多个稳定的IP后，在高过了网站的设置阀值被禁止访问时可以自动切换IP绕过网站防御机制，继续进行爬取。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/28/editor/#more" rel="contents">
+            <a class="btn" href="/2017/02/04/反爬虫机制/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -375,8 +379,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/Q-hexo/" itemprop="url">
-                  hexo 问题解决方案
+                <a class="post-title-link" href="/2017/02/02/github使用技巧/" itemprop="url">
+                  github 使用技巧之初零
                 </a>
               
             
@@ -388,16 +392,16 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-02-02T00:00:00+08:00" content="2017-02-02">
+              2017-02-02
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-20T12:45:05+08:00" content="2017-02-20">
-             2017-02-20
+           <time itemprop="dateUpdated" datetime="2017-02-02T20:52:32+08:00" content="2017-02-02">
+             2017-02-02
                         </time>
                           </span>
                           
@@ -425,9 +429,13 @@
 
       
         
-          <h1 id="权限问题解决"><a href="#权限问题解决" class="headerlink" title="权限问题解决"></a>权限问题解决</h1><p>hexo d 提交过程中 define permission错误。<br>是由于hexo使用过程中使用了root权限的原因。<br>
+          <h1 id="lead"><a href="#lead" class="headerlink" title="lead"></a>lead</h1><p>github是所需要学习的一个系列，学到的就写下以防时间的腐蚀。这是第一篇，新的开始。本篇的目的是将hexo 中所需的图片上传至github中，以达到about页面可以永久引用该图片的目的。这一阶段以将本地下载的图片成功上传至github中为结束。</p>
+<h1 id="step"><a href="#step" class="headerlink" title="step"></a>step</h1><ul>
+<li>在github网页端创建一个仓库或者使用命令行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# test&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:echoocking/test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/Q-hexo/#more" rel="contents">
+            <a class="btn" href="/2017/02/02/github使用技巧/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -478,8 +486,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/closure/" itemprop="url">
-                  闭包的含义
+                <a class="post-title-link" href="/2017/01/25/自动化+爬取知乎热门问题/" itemprop="url">
+                  ②自动化+scrapy爬虫爬取知乎
                 </a>
               
             
@@ -491,16 +499,16 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-01-25T18:12:58+08:00" content="2017-01-25">
+              2017-01-25
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:34+08:00" content="2017-02-02">
-             2017-02-02
+           <time itemprop="dateUpdated" datetime="2017-02-04T21:53:50+08:00" content="2017-02-04">
+             2017-02-04
                         </time>
                           </span>
                           
@@ -528,10 +536,12 @@
 
       
         
-          <p>#基本概念 闭包</p>
-<p>听起来很厉害的样子喔<br>概念：内部函数对外部变量的引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def count():</span><br><span class="line">    fs = []</span><br><span class="line">    for i in range(1, 4):</span><br><span class="line">        def f():</span><br><span class="line">             return i*i</span><br><span class="line">        fs.append(f)</span><br><span class="line">    return fs</span><br><span class="line"></span><br><span class="line">f1, f2, f3 = count()</span><br></pre></td></tr></table></figure></p>
+          <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>TryToZH项目的目的是爬取知乎热门问题的高票答案的一个项目。完成模拟登录的之后，开始获取内部的内容。由于知乎话题广场之中是通过各个分类进行索引，所以本项目使用其中一个大分类作为爬虫的入口，通过爬虫进入分类下的问题集合页，爬取热门问题的链接。ZH是以Js的方式动态生成数据且以滚动页面的方式进行分页。所以这里实现通过scrapy+selenium自动化爬取内容链接。<br>tips：接上篇模拟登录，没看第一篇的同学先补补课          </p>
+<h1 id="scrapy-爬虫框架"><a href="#scrapy-爬虫框架" class="headerlink" title="scrapy 爬虫框架"></a>scrapy 爬虫框架</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote>
+<p>“ Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。<br>应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。<br>其最初是为了 页面抓取 (更确切来说, 网络抓取 )所设计的。<br>也可以应用在获取API所返回的数据(例如 AmazonAssociates Web Services )或者通用的网络爬虫。”</p>
+</blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/closure/#more" rel="contents">
+            <a class="btn" href="/2017/01/25/自动化+爬取知乎热门问题/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -582,8 +592,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/requests库/" itemprop="url">
-                  requests库
+                <a class="post-title-link" href="/2016/12/21/crawl笔记0/" itemprop="url">
+                  ①一招教会你 模拟登录知乎
                 </a>
               
             
@@ -595,16 +605,16 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T16:19:10+08:00" content="2016-06-09">
-              2016-06-09
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-12-21T15:24:00+08:00" content="2016-12-21">
+              2016-12-21
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:39+08:00" content="2017-02-02">
-             2017-02-02
+           <time itemprop="dateUpdated" datetime="2017-02-04T21:54:26+08:00" content="2017-02-04">
+             2017-02-04
                         </time>
                           </span>
                           
@@ -632,9 +642,11 @@
 
       
         
-          <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><p>requests库和url和urllib库有类似的作用，都是提供处理http协议的功能。<br>但是requests库使用更加方便 ，能够更加简单的书写代码。<br>例如 r=requests.get(url)<br>urllib2.urlopen(url).read()功能<br>接下来 我们实践一下 YOYO<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; r=requests.get(<span class="string">'http://www.qiushibaike.com'</span>)</span><br><span class="line">&gt;<span class="keyword">print</span> r.url</span><br><span class="line">http://www.qiushibaike.com/</span><br><span class="line">&gt;<span class="keyword">print</span> r</span><br><span class="line">&lt;Response [<span class="number">200</span>]&gt;</span><br><span class="line">&gt;r.text</span><br><span class="line"><span class="string">u'\n&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span></span><br></pre></td></tr></table></figure></p>
+          <p>爬虫爬取知乎 ROUND ONE – 知乎模拟登录</p>
+<h1 id="主要思路简述"><a href="#主要思路简述" class="headerlink" title="主要思路简述"></a>主要思路简述</h1><p>希望能给同在爬虫挣扎的同学一点有用的分享。<br>编写爬虫的第一步需要先与被爬取网络建立连接，部分网站可以无需登录即可访问其资源（例如百度），部分网站必须登录后才能对其内容进行访问（例如知乎）<br>而笔者项目的目的是爬取知乎热门问题的精辟回答，所以第一步：知乎的模拟登录 START~</p>
+<h1 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h1><p>1.chrome自带的工具分析network； –&gt; 得出headers,url<br>2.略微的进行分析； –&gt; 在zhihu.com响应的request包中有_xrsf字段，并且在发送的时候需要被发送。所以_xrsf需要被保留~<br>3.分析知乎登录的模块； –&gt;两种登录方式 邮箱、手机号，两种登录的需求 有验证码、无验证码<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/requests库/#more" rel="contents">
+            <a class="btn" href="/2016/12/21/crawl笔记0/#more" rel="contents">
               More &raquo;
             </a>
           </div>
@@ -685,8 +697,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/07/hello-Word/" itemprop="url">
-                  hello Word
+                <a class="post-title-link" href="/2016/07/18/装饰器/" itemprop="url">
+                  Python--装饰器
                 </a>
               
             
@@ -698,16 +710,16 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-07T14:53:57+08:00" content="2016-06-07">
-              2016-06-07
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T14:25:40+08:00" content="2016-07-18">
+              2016-07-18
             </time>
           </span>
          
            <span class="post-updated">
             &nbsp; | &nbsp; 更新于
-           <time itemprop="dateUpdated" datetime="2017-02-02T21:20:37+08:00" content="2017-02-02">
-             2017-02-02
+           <time itemprop="dateUpdated" datetime="2017-03-25T22:30:38+08:00" content="2017-03-25">
+             2017-03-25
                         </time>
                           </span>
                           
@@ -735,10 +747,14 @@
 
       
         
-          
-            <p><em>人要是没有梦想，那跟咸鱼有什么区别？</em><br>有的呀 咸鱼能吃呀</p>
-
-          
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        f = self.func</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> (<span class="string">'call\'s by :%s'</span> %func)</span><br><span class="line">		<span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> (<span class="string">"hello"</span>)</span><br><span class="line"></span><br><span class="line">hello()</span><br></pre></td></tr></table></figure>
+<pre><code>@log就是一个装饰器的标志符。被装饰的函数为hello()。
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/18/装饰器/#more" rel="contents">
+              More &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -769,7 +785,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -810,7 +826,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -820,7 +836,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
